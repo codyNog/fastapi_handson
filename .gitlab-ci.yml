@@ -18,7 +18,7 @@ push:
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:latest
   script:
     - gcloud --project ${GCP_PROJECT} auth activate-service-account --key-file .secrets/google_application_credentials.json
-    - gcloud --project ${GCP_PROJECT} builds submit --tag $GCR_IMAGE:$CI_COMMIT_REF_SLUG
+    - gcloud --project ${GCP_PROJECT} builds submit --tag $GCR_IMAGE:$CI_COMMIT_REF_NAME
   only:
     - branches
     - tags
