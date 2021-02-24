@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+# import requests
 
 app = FastAPI()
 
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World!!!"}
+    # print(requests.get("http://sample-httpbin.sample/ip").text)
+    return {"message": "hoge"}
