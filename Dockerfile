@@ -12,4 +12,4 @@ RUN poetry install
 
 COPY main.py /opt/main.py
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
