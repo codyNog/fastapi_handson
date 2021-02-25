@@ -11,5 +11,8 @@ MESSAGE = os.getenv("MESSAGE", "set MESSAGE as an environment variable to change
 
 @app.get("/")
 async def root():
+    # TODO 適当な文字列をprintする
+    # print("モルカー")
+
     # print(requests.get("http://sample-httpbin.sample/ip").text)
     return {"message": MESSAGE}
