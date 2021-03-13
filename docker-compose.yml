@@ -1,9 +1,11 @@
-version: '3'
+version: "3"
 services:
   app:
     build: .
     command: ["--reload"]
-    ports:
-    - 10080:8080
     volumes:
-    - ./main.py:/opt/main.py
+      - .:/opt/
+    environment:
+      - PYTHONPATH=/opt/src
+    ports:
+      - 10080:8080

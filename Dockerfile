@@ -10,6 +10,6 @@ COPY pyproject.toml .
 COPY poetry.lock .
 RUN poetry install
 
-COPY main.py /opt/main.py
+COPY . /opt/
 
 ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

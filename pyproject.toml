@@ -2,7 +2,7 @@
 name = "gke-sample-app"
 version = "0.1.0"
 description = ""
-authors = ["Tatsuya Hirase <tatch@jxpress.net>"]
+authors = ["codynog"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

@@ -1,9 +1,17 @@
 import os
+import dataclasses
 
 from fastapi import FastAPI
+from use_cases.user_repository import UserRepository
+from impl.user_repository import UserRepositoryImpl
 
-# import requests
 
+@dataclasses.dataclass()
+class Backend:
+    user_repos: UserRepository = UserRepositoryImpl()
+
+
+backend = Backend()
 app = FastAPI()
 
 MESSAGE = os.getenv("MESSAGE", "set MESSAGE as an environment variable to change me")
@@ -15,4 +23,4 @@ async def root():
     # print("モルカー")
 
     # print(requests.get("http://sample-httpbin.sample/ip").text)
-    return {"message": MESSAGE}
+    return backend.user_repos.get_users()
