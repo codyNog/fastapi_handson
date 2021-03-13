@@ -1,9 +1,9 @@
-import os
 import dataclasses
 
 from fastapi import FastAPI
 from use_cases.user_repository import UserRepository
 from impl.user_repository import UserRepositoryImpl
+from routers.user import user_router
 
 
 @dataclasses.dataclass()
@@ -14,7 +14,9 @@ class Backend:
 backend = Backend()
 app = FastAPI()
 
-MESSAGE = os.getenv("MESSAGE", "set MESSAGE as an environment variable to change me")
+app.include_router(
+    user_router,
+)
 
 
 @app.get("/")

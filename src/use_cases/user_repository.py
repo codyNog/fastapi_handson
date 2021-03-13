@@ -7,7 +7,15 @@ Created = bool
 
 class UserRepository(metaclass=ABCMeta):
     @abstractmethod
-    def get_user(self, id) -> Iterator[User]:
+    def create_user(self, user: User) -> Iterator[User]:
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_user(self, id: str) -> Iterator[User]:
+        raise NotImplementedError
+
+    @abstractmethod
+    def update_user(self, user: User) -> Iterator[User]:
         raise NotImplementedError
 
     @abstractmethod
